@@ -2,11 +2,24 @@ require 'sinatra/base'
 
 class MyApp < Sinatra::Base
   get '/' do
-    erb :index
+  	@name = params[:name] 
+  	@email = params[:email] 
+  	@comment = params[:comment] 
+  	if @name == nil and @email == nil and @comment == nil
+    	erb :index   
+    end
+
+    if @name == nil or @email == nil or @comment == nil
+    	return "Debe registrar"
+    else
+    	return "Se registro"
+    end
+
   end
 
   get '/message' do
   	@name = params[:name] 
+
     return @name
   end
 
