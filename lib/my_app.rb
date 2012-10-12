@@ -9,9 +9,9 @@ class MyApp < Sinatra::Base
     	erb :index   
 	else
 	    if @name == "" or @email == "" or @comment == ""
-	    	return "Debe registrar"
+	    	return "Debe registrar!"
 	    else
-	    	return "Se registro"
+	    	return "Se registro!"
 	    end
 	end
   end

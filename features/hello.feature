@@ -5,8 +5,14 @@ Feature: Registro
 
 	Scenario: Registro
 		When I go to the home page
-		Then I should see "Se registro!"
+		And I fill in "name" with ""
+		And I fill in "email" with ""
+		And I fill in "comment" with ""
+		Then I should see "Debe registrar!"
 
 	Scenario: No Registro
 		When I go to the home page
-		Then I should see "Debe registrar!"
+		And I fill in "name" with "*"
+		And I fill in "email" with "*"
+		And I fill in "comment" with "*"
+		Then I should see "Se registro!"
