@@ -7,14 +7,13 @@ class MyApp < Sinatra::Base
   	@comment = params[:comment] 
   	if @name == nil and @email == nil and @comment == nil
     	erb :index   
-    end
-
-    if @name == nil or @email == nil or @comment == nil
-    	return "Debe registrar"
-    else
-    	return "Se registro"
-    end
-
+	else
+	    if @name == "" or @email == "" or @comment == ""
+	    	return "Debe registrar"
+	    else
+	    	return "Se registro"
+	    end
+	end
   end
 
   get '/message' do
